@@ -1,6 +1,6 @@
 import React from 'react';
 import { SimulationResult, SystemResult } from '../types';
-import { TrendingDown, TrendingUp, DollarSign, Wallet, ArrowUpRight } from 'lucide-react';
+import { TrendingDown, TrendingUp, DollarSign, Wallet, ArrowUpRight, Landmark } from 'lucide-react';
 
 interface SummaryCardsProps {
   result: SimulationResult;
@@ -24,6 +24,11 @@ const SystemSummary: React.FC<{ data: SystemResult; color: string }> = ({ data, 
       </h3>
       
       <div className="grid grid-cols-2 gap-y-4 gap-x-2 text-sm">
+        <div className="col-span-2 pb-3 mb-3 border-b border-slate-100">
+             <p className="text-slate-500 mb-1 flex items-center gap-1 text-xs uppercase tracking-wider font-semibold"><Landmark size={14}/> Valor Financiado</p>
+             <p className="font-bold text-2xl text-slate-800">{formatCurrency(data.summary.loanAmount)}</p>
+        </div>
+
         <div className="col-span-1">
             <p className="text-slate-500 mb-1 flex items-center gap-1"><TrendingUp size={14}/> 1ª Parcela</p>
             <p className="font-bold text-lg text-slate-800">{formatCurrency(data.summary.firstInstallment)}</p>

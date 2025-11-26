@@ -21,6 +21,7 @@ export interface SystemResult {
   systemName: 'SAC' | 'PRICE';
   installments: Installment[];
   summary: {
+    loanAmount: number; // Added loanAmount for display
     firstInstallment: number;
     lastInstallment: number;
     totalInterest: number;

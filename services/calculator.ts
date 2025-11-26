@@ -88,6 +88,7 @@ const calculateSAC = (params: SimulationParams): SystemResult => {
     systemName: 'SAC',
     installments,
     summary: {
+      loanAmount,
       firstInstallment: installments[0].totalPayment,
       lastInstallment: installments[installments.length - 1].totalPayment,
       totalInterest,
@@ -166,6 +167,7 @@ const calculatePRICE = (params: SimulationParams): SystemResult => {
     systemName: 'PRICE',
     installments,
     summary: {
+      loanAmount,
       firstInstallment: installments[0].totalPayment,
       lastInstallment: installments[installments.length - 1].totalPayment,
       totalInterest,
